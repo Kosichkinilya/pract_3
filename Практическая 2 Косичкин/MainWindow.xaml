@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Практическая_2_Косичкин"
         mc:Ignorable="d"
+        Icon="/Icon_info.png"
         Title=" Практическая 2 " Height="450" Width="800">
-    <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="72,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22"/>
-        <Label Content="Колонки" HorizontalAlignment="Left" Margin="10,238,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="72,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" />
-        <Label Content="Строки" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top"/>
-        <Button Content="Заполнить" HorizontalAlignment="Left" Margin="202,243,0,0" VerticalAlignment="Top" Width="70" Height="60" />
-
+    <Grid OpacityMask="#FFE42C2C" Height="432.9" AutomationProperties.Name="" AutomationProperties.ItemType="" RenderTransformOrigin="1,0">
+        <TextBox x:Name="Columns_Box" HorizontalAlignment="Left" Margin="72,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26"/>
+        <Label Content="Колонки" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Lines_Box" HorizontalAlignment="Left" Margin="72,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" />
+        <Label Content="Строки" HorizontalAlignment="Left" Margin="10,281,0,0" VerticalAlignment="Top"/>
+        <Button Content="Заполнить" HorizontalAlignment="Left" Margin="202,243,0,0" VerticalAlignment="Top" Width="70" Height="64" Click="Fill" Grid.RowSpan="91" />
+        <TextBox x:Name="Calculation_Box" HorizontalAlignment="Left" Margin="72,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26"/>
+        <Label Content="Расчёт" HorizontalAlignment="Left" Margin="10,321,0,0" VerticalAlignment="Top"/>
+        <Button Content="Выполнить" HorizontalAlignment="Left" Margin="202,321,0,0" VerticalAlignment="Top" Width="70" Height="26" Click="Calculation" />
 
         <DataGrid x:Name="DataGrid" AutoGenerateColumns="True"
                   Background="White"
@@ -25,13 +28,15 @@
             <MenuItem Header="Файл" Width="51">
                         
 
-                <MenuItem Header="Заполнить" ToolTip="Диапазон генерации от 0 до количества цифр в массиве" ></MenuItem>
+                <MenuItem Header="Заполнить" ToolTip="Заполняет массив" ></MenuItem>
 
-                <MenuItem Header="" ToolTip="Находит максимальное значение"  ></MenuItem>
+                <MenuItem Header="Выполнить" ToolTip="Выполняет расчёт"  ></MenuItem>
 
-                <MenuItem Header="Очистить" ></MenuItem>
+                <MenuItem Header="О программе" Click="Information"></MenuItem>
 
-                <MenuItem Header="Выход" ></MenuItem>
+                <MenuItem Header="Очистить" Click="Clear_TB"> </MenuItem>
+
+                <MenuItem Header="Выход" Click="Exit"> </MenuItem>
 
 
                     
@@ -40,7 +45,8 @@
             </MenuItem>
 
         </Menu>
-
+       
+       
 
 
 

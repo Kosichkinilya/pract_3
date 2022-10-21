@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Практическая 2 Косичкин", "Практическая 2 Косичкин\Практическая 2 Косичкин.csproj", "{082D3AC1-85C9-4346-8226-DA2B7C0EEEBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Практическая 2 Косичкин", "Практическая 2 Косичкин\Практическая 2 Косичкин.csproj", "{082D3AC1-85C9-4346-8226-DA2B7C0EEEBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionArray", "ExtensionArray\ExtensionArray.csproj", "{7BD619C0-919C-4878-9A4B-91A89A569AC1}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "LibArray", "LibArray\LibArray.vbproj", "{DFB74B35-42E8-46A3-8BFA-47E81F2B1991}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{082D3AC1-85C9-4346-8226-DA2B7C0EEEBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{082D3AC1-85C9-4346-8226-DA2B7C0EEEBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{082D3AC1-85C9-4346-8226-DA2B7C0EEEBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BD619C0-919C-4878-9A4B-91A89A569AC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BD619C0-919C-4878-9A4B-91A89A569AC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD619C0-919C-4878-9A4B-91A89A569AC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BD619C0-919C-4878-9A4B-91A89A569AC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFB74B35-42E8-46A3-8BFA-47E81F2B1991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFB74B35-42E8-46A3-8BFA-47E81F2B1991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFB74B35-42E8-46A3-8BFA-47E81F2B1991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFB74B35-42E8-46A3-8BFA-47E81F2B1991}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

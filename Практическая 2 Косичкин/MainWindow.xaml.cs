@@ -10,8 +10,10 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Lib_8;
 
 namespace Практическая_2_Косичкин
 {
@@ -25,6 +27,36 @@ namespace Практическая_2_Косичкин
             InitializeComponent();
         }
 
-        
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Clear_TB(object sender, RoutedEventArgs e)
+        {
+            Columns_Box.Clear();
+            Lines_Box.Clear();
+            Calculation_Box.Clear();
+        }
+
+
+        private void Information(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(" Вычислить косинус (cos) суммы чисел < 3. \r\n Результат вывести на экран \r\n \r\n Разработчик: Косичкин Илья \r\n ИСП - 34");
+        }
+
+        private void Calculation(object sender, RoutedEventArgs e)
+        {
+                      
+            
+    
+        }
+
+        private void Fill(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }
