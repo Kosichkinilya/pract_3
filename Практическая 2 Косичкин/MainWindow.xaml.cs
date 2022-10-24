@@ -1,9 +1,9 @@
-﻿using System;
+﻿using System.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -14,6 +14,7 @@ using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Lib_8;
+using LibArray;
 
 namespace Практическая_2_Косичкин
 {
@@ -26,6 +27,8 @@ namespace Практическая_2_Косичкин
         {
             InitializeComponent();
         }
+
+        Array<int> array = new Array<int>(0, 0);
 
         private void Exit(object sender, RoutedEventArgs e)
         {
@@ -45,18 +48,34 @@ namespace Практическая_2_Косичкин
             MessageBox.Show(" Вычислить косинус (cos) суммы чисел < 3. \r\n Результат вывести на экран \r\n \r\n Разработчик: Косичкин Илья \r\n ИСП - 34");
         }
 
-        private void Calculation(object sender, RoutedEventArgs e)
-        {
-                      
-            
-    
-        }
+        //private void Calculation(object sender, RoutedEventArgs e)
+        //{
+        //    if (array.Rows != 0 && array.Columns != 0)
+        //    {
+        //        Calculation_Box.Text = $"{Calculation_Box.Difference(array)}";
+        //    }
+        //    else MessageBox.Show("Создайте массив");
+        //}
 
         private void Fill(object sender, RoutedEventArgs e)
         {
+            if (!int.TryParse(Lines_Box.Text, out int rows))
+            {
+                MessageBox.Show("Введте значение");
+                Lines_Box.Clear();
+                return;
 
+            }
+            if (!int.TryParse(Columns_Box.Text, out int column))
+            {
+                MessageBox.Show("Введите значение");
+                Columns_Box.Clear();
+                return;
+
+            }
+
+            ExtensionArray.Fill(array, rows, column);
+            DataGrid.ItemsSource = array.ToDataTable().DefaultView;
         }
-
-
     }
 }
