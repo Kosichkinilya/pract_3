@@ -34,7 +34,7 @@ namespace Lib_8
         /// <summary>
         /// Находим разницу чисел
         /// </summary>
-        /// <param name="numbers">Двумерный массив из класса Matrix</param>
+        /// <param name="numbers">Двумерный массив из класса Array</param>
         /// <returns></returns>
         public static double Difference(this Array<int> numbers)
         {
