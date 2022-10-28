@@ -15,7 +15,7 @@
         <Button Content="Заполнить" HorizontalAlignment="Left" Margin="202,243,0,0" VerticalAlignment="Top" Width="70" Height="64" Click="Fill" Grid.RowSpan="91" />
         <TextBox x:Name="Calculation_Box" HorizontalAlignment="Left" Margin="72,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26"/>
         <Label Content="Расчёт" HorizontalAlignment="Left" Margin="10,321,0,0" VerticalAlignment="Top"/>
-        <Button Content="Выполнить" HorizontalAlignment="Left" Margin="202,321,0,0" VerticalAlignment="Top" Width="70" Height="26"  />
+        <Button Content="Выполнить" HorizontalAlignment="Left" Margin="202,321,0,0" VerticalAlignment="Top" Width="70" Height="26" Click="To_Perform" />
 
         <DataGrid x:Name="DataGrid" AutoGenerateColumns="True"
                   

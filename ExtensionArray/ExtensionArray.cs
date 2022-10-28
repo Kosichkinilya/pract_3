@@ -36,19 +36,19 @@ namespace Lib_8
         /// </summary>
         /// <param name="numbers">Двумерный массив из класса Matrix</param>
         /// <returns></returns>
-        //public static double Difference(this Array<int> numbers)
-        //{
-        //    double sum = 0;
-        //    for (int i = 0; i < numbers.Rows; i++)
-        //    {
-        //        for (int j = 0; j < numbers.Columns; j++)
-        //        {
-        //            if (numbers[i, j] < 3) sum += numbers[i, j];
-        //        }
-        //    }
-        //    if (sum == 0) return 0;
-        //    else
-        //        return Math.Round(Math.Cos(sum), 3);
-        //}
+        public static double Difference(this Array<int> numbers)
+        {
+            double sum = 0;
+            for (int i = 0; i < numbers.Rows; i++)
+            {
+                for (int j = 0; j < numbers.Columns; j++)
+                {
+                    if (numbers[i, j] < 3) sum += numbers[i, j];
+                }
+            }
+            if (sum == 0) return 0;
+            else
+                return Math.Round(Math.Cos(sum), 3);
+        }
     }
 }

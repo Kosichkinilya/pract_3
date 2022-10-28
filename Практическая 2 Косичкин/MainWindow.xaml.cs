@@ -42,20 +42,19 @@ namespace Практическая_2_Косичкин
             Calculation_Box.Clear();
         }
 
-
         private void Information(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(" Вычислить косинус (cos) суммы чисел < 3. \r\n Результат вывести на экран \r\n \r\n Разработчик: Косичкин Илья \r\n ИСП - 34");
         }
 
-        //private void Calculation(object sender, RoutedEventArgs e)
-        //{
-        //    if (array.Rows != 0 && array.Columns != 0)
-        //    {
-        //        Calculation_Box.Text = $"{Calculation_Box.Difference(array)}";
-        //    }
-        //    else MessageBox.Show("Создайте массив");
-        //}
+        private void To_Perform(object sender, RoutedEventArgs e)
+        {
+            if (array.Rows != 0 && array.Columns != 0)
+            {
+                Calculation_Box.Text = $"{ExtensionArray.Difference(array)}";
+            }
+            else MessageBox.Show("Создайте массив");
+        }
 
         private void Fill(object sender, RoutedEventArgs e)
         {

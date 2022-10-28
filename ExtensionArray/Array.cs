@@ -59,11 +59,11 @@ namespace LibArray
             return res;
         }
 
-        public void Add(T[,] items)
+        public void Add(T[,] items) // 
         {
-            _rows = items.GetLength(0);
-            _columns = items.GetLength(1);
-            _items = new T[_rows, _columns];
+            _rows = items.GetLength(0); // колво строк 
+            _columns = items.GetLength(1); // колвоколонок 
+            _items = new T[_rows, _columns]; // число ввденных пользователем строек и колонок 
             for (int i = 0; i < items.GetLength(0); i++)
             {
                 for (int j = 0; j < items.GetLength(1); j++)
