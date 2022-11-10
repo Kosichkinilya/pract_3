@@ -14,7 +14,7 @@ using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Lib_8;
-using LibArray;
+using LibMatrix;
 
 namespace Практическая_2_Косичкин
 {
@@ -28,7 +28,7 @@ namespace Практическая_2_Косичкин
             InitializeComponent();
         }
 
-        Array<int> array = new Array<int>(0, 0);
+        Matrix<int> matrix = new Matrix<int>(0, 0);
 
         private void Exit(object sender, RoutedEventArgs e)
         {
@@ -40,6 +40,7 @@ namespace Практическая_2_Косичкин
             Columns_Box.Clear();
             Lines_Box.Clear();
             Calculation_Box.Clear();
+            DataGrid.ItemsSource = null;
         }
 
         private void Information(object sender, RoutedEventArgs e)
@@ -49,9 +50,9 @@ namespace Практическая_2_Косичкин
 
         private void To_Perform(object sender, RoutedEventArgs e)
         {
-            if (array.Rows != 0 && array.Columns != 0)
+            if (matrix.Rows != 0 && matrix.Columns != 0)
             {
-                Calculation_Box.Text = $"{ExtensionArray.Difference(array)}";
+                Calculation_Box.Text = $"{ExtensionMatrix.Difference(matrix)}";
             }
             else MessageBox.Show("Создайте массив");
         }
@@ -69,12 +70,30 @@ namespace Практическая_2_Косичкин
             {
                 MessageBox.Show("Введите значение");
                 Columns_Box.Clear();
+
                 return;
 
             }
 
-            ExtensionArray.Fill(array, rows, column);
-            DataGrid.ItemsSource = array.ToDataTable().DefaultView;
+            ExtensionMatrix.Fill(matrix, rows, column);
+            DataGrid.ItemsSource = matrix.ToDataTable().DefaultView;
+        }
+
+        private void Open_File(object sender, RoutedEventArgs e)
+        {
+            matrix.Deserialize(@".\matrix.txt");
+            DataGrid.ItemsSource = matrix.ToDataTable().DefaultView;
+        }
+
+        private void Save_file(object sender, RoutedEventArgs e)
+        {
+                MessageBox.Show("Сохранено \n Может быть открыто после очистки данных ( Файл → Очистить )");
+                matrix.Serialize(@".\matrix.txt");
+        }
+
+        private void Default_Button(object sender, RoutedEventArgs e)
+        {
+           // изменять колонки и строки на 0 
         }
     }
 }

@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Data;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography.X509Certificates;
 
+#pragma warning disable SYSLIB0011
 
-
-
-namespace LibArray
+// для класса матрикс нужна отдельная библиотека 
+namespace LibMatrix
 {
-    public class Array<T>
+    public class Matrix<T>
     {
 
         private T[,] _items;
         private int _rows, _columns;
 
-        public Array(int rowCount, int columnCount, string extension = ".array")
+        public Matrix(int rowCount, int columnCount, string extension = ".matrix")
         {
             _items = new T[rowCount, columnCount];
             Extension = extension;
@@ -99,6 +101,32 @@ namespace LibArray
             }
         }
 
-    }
+        private static readonly BinaryFormatter _formatter = new BinaryFormatter();
+        
+        public void Save(object data, string path)
+        {
+            using (FileStream stream = new FileStream(path, FileMode.Create))
+            {
+                _formatter.Serialize(stream, data);
+            }
+        }
 
+        public object Open(string path)
+        {
+            using (FileStream stream = new FileStream(path, FileMode.Open))
+            {
+                return _formatter.Deserialize(stream);
+            }
+        }
+
+        public void Serialize(string path)
+        {
+            Save(_items, string.Concat(path));
+        }
+
+        public void Deserialize(string path)
+        {
+            _items = (T[,])Open(string.Concat(path));
+        }
+    }
 }

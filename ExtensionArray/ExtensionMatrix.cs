@@ -1,11 +1,11 @@
 using System;
-using LibArray;
+using LibMatrix;
 
 namespace Lib_8
 {
-    public static class ExtensionArray
+    public static class ExtensionMatrix
     {
-        public static void FillArray(Array<int> array, int rows, int column)
+        public static void FillArray(Matrix<int> matrix, int rows, int column)
         {
             throw new NotImplementedException();
         }
@@ -18,7 +18,7 @@ namespace Lib_8
         /// <param name="column">Значение столбцов которые мы получаем от пользователя</param>
         /// <param name="minValue">Минимальное значение для случайного числа</param>
         /// <param name="maxValue">Максимальное значение для случайного числа</param>
-        public static void Fill(this Array<int> numbers, int rows, int column)
+        public static void Fill(this Matrix<int> numbers, int rows, int column)
         {
             int[,] array = new int[rows, column];
             Random rnd = new Random();
@@ -36,7 +36,7 @@ namespace Lib_8
         /// </summary>
         /// <param name="numbers">Двумерный массив из класса Array</param>
         /// <returns></returns>
-        public static double Difference(this Array<int> numbers)
+        public static double Difference(this Matrix<int> numbers)
         {
             double sum = 0;
             for (int i = 0; i < numbers.Rows; i++)

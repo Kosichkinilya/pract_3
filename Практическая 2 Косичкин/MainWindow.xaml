@@ -22,6 +22,7 @@
             </Grid>
         </Border>
 
+
         <DataGrid x:Name="DataGrid" AutoGenerateColumns="True"
                   
                   
@@ -44,6 +45,10 @@
             </MenuItem>
 
         </Menu>
+
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="85,379,0,0" VerticalAlignment="Top" Width="70" Height="26" Click="Save_file" />
+        <Button Content="Открыть" HorizontalAlignment="Left" Margin="10,379,0,0" VerticalAlignment="Top" Width="70" Height="26" Click="Open_File" />
+        <Button Content="По умолчанию" HorizontalAlignment="Left" Margin="160,379,0,0" VerticalAlignment="Top" Width="112" Height="26" Click="Default_Button" />
 
     </Grid>
 </Window>
