@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography.X509Certificates;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 #pragma warning disable SYSLIB0011
 
@@ -34,9 +36,14 @@ namespace LibMatrix
 
         public void DefaultInit()
         {
-            _items = default;
-            _rows = default;
-            _columns = default;
+
+            for (int i = 0; i < _rows; i++)
+            {
+                for (int j = 0; j < _columns; j++)
+                {
+                    _items[i, j] = default;
+                }
+            }
         }
 
         public DataTable ToDataTable()
@@ -58,6 +65,7 @@ namespace LibMatrix
 
                 res.Rows.Add(row);
             }
+
             return res;
         }
 
@@ -102,7 +110,7 @@ namespace LibMatrix
         }
 
         private static readonly BinaryFormatter _formatter = new BinaryFormatter();
-        
+
         public void Save(object data, string path)
         {
             using (FileStream stream = new FileStream(path, FileMode.Create))

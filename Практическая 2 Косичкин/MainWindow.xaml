@@ -24,21 +24,18 @@
 
 
         <DataGrid x:Name="DataGrid" AutoGenerateColumns="True"
-                  
-                  
+
                   Margin="5,20,5,201"/>
 
         <Menu  Height="20" VerticalAlignment="Top">
 
             <MenuItem Header="Файл" Width="51">
 
-                <MenuItem Header="Заполнить" ToolTip="Заполняет массив" />
-
-                <MenuItem Header="Выполнить" ToolTip="Выполняет расчёт"  />
-
-                <MenuItem Header="О программе" Click="Information"/>
+                <MenuItem Header="Заполнить" ToolTip="Заполняет массив" Click="Fill" />
 
                 <MenuItem Header="Очистить" Click="Clear_TB"/>
+                
+                <MenuItem Header="О программе" Click="Information"/>
 
                 <MenuItem Header="Выход" Click="Exit"/>
 

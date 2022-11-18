@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Lib_8;
 using LibMatrix;
+using System.Data;
 
 namespace Практическая_2_Косичкин
 {
@@ -93,7 +94,8 @@ namespace Практическая_2_Косичкин
 
         private void Default_Button(object sender, RoutedEventArgs e)
         {
-           // изменять колонки и строки на 0 
+            matrix.DefaultInit();
+            Table.ItemsSource = matrix.ToDataTable().DefaultView;
         }
     }
 }

@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExtensionArray\ExtensionArray.csproj" />
+    <ProjectReference Include="..\ExtensionArray\ExtensionMatrix.csproj" />
   </ItemGroup>
 
   <ItemGroup>
