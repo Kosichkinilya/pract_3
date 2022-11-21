@@ -95,7 +95,7 @@ namespace Практическая_2_Косичкин
         private void Default_Button(object sender, RoutedEventArgs e)
         {
             matrix.DefaultInit();
-            Table.ItemsSource = matrix.ToDataTable().DefaultView;
+            DataGrid.ItemsSource = matrix.ToDataTable().DefaultView;
         }
     }
 }
