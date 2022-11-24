@@ -5,7 +5,7 @@ namespace Lib_8
 {
     public static class ExtensionMatrix
     {
-        public static void FillArray(Matrix<int> matrix, int rows, int column)
+        public static void FillMatrix(Matrix<int> matrix, int rows, int column)
         {
             throw new NotImplementedException();
         }
@@ -20,21 +20,21 @@ namespace Lib_8
         /// <param name="maxValue">Максимальное значение для случайного числа</param>
         public static void Fill(this Matrix<int> numbers, int rows, int column)
         {
-            int[,] array = new int[rows, column];
+            int[,] matrix = new int[rows, column];
             Random rnd = new Random();
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < column; j++)
                 {
-                    array[i, j] = rnd.Next(-10, 10);
+                    matrix[i, j] = rnd.Next(-10, 10);
                 }
             }
-            numbers.Add(array);
+            numbers.Add(matrix);
         }
         /// <summary>
         /// Находим разницу чисел
         /// </summary>
-        /// <param name="numbers">Двумерный массив из класса Array</param>
+        /// <param name="numbers">Двумерный массив из класса Matrix</param>
         /// <returns></returns>
         public static double Difference(this Matrix<int> numbers)
         {
